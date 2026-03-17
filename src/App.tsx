@@ -36,10 +36,10 @@ export default function App() {
         alignItems: 'center',
         justifyContent: 'center',
         height: '100vh',
-        fontFamily: 'var(--mc-font)',
-        color: 'var(--mc-gray)',
+        fontFamily: 'monospace',
+        color: '#AAAAAA',
         fontSize: 14,
-        background: 'var(--mc-bg)',
+        background: '#1a1a1a',
       }}>
         Loading ATM10 data...
       </div>
