@@ -1,6 +1,5 @@
 import { useJEIStore } from '../../store/jeiStore'
 import { parseFormatted, stripFormatting } from '../../utils/formatting'
-import { RECIPE_TYPE_LABELS } from '../../utils/recipes'
 import { CraftingGrid } from './CraftingGrid'
 import { FurnaceView } from './FurnaceView'
 import { GenericRecipe } from './GenericRecipe'

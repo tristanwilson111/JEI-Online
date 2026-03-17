@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useJEIStore } from '../../store/jeiStore'
-import { parseFormatted, stripFormatting } from '../../utils/formatting'
+import { parseFormatted } from '../../utils/formatting'
 import './Tooltip.css'
 
 const OFFSET_X = 12

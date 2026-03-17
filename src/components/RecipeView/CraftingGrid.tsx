@@ -15,7 +15,6 @@ export function CraftingGrid({ recipe }: CraftingGridProps) {
   }))
 
   const isShapeless = recipe.type === 'crafting_shapeless'
-  const gridSize = isShapeless ? recipe.inputs.length : 9
   const cols = isShapeless ? Math.ceil(Math.sqrt(recipe.inputs.length)) : 3
 
   // For shaped, pad to 9 slots

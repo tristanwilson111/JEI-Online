@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react'
+import { useRef } from 'react'
 import { useSearch } from '../../hooks/useSearch'
 import './SearchBar.css'
 
