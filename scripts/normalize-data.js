@@ -5,7 +5,7 @@
  *
  * Inputs:
  *   cache/lang/<modid>.json         -- item display names
- *   cache/recipes/<modid>/**/*.json -- recipe JSON files
+ *   cache/recipes/<modid>/ ** /*.json -- recipe JSON files (recursive)
  *   cache/kubejs/                   -- KubeJS recipe scripts
  *   cache/sprites/manifest.json     -- sprite sheet manifest
  *
@@ -309,6 +309,12 @@ export async function normalizeData() {
   console.log('  Building item list...')
   const items = buildItems(displayNames, spriteManifest)
   console.log(`  Found ${items.length} items`)
+
+  if (items.length === 0) {
+    console.warn('  No items found — JAR extraction has not been run yet.')
+    console.warn('  Keeping existing public/data/items.json unchanged.')
+    return
+  }
 
   const itemsPath = path.join(PUBLIC_DATA, 'items.json')
   const recipesPath = path.join(PUBLIC_DATA, 'recipes.json')
