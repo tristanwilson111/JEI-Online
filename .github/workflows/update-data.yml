@@ -1,0 +1,81 @@
+name: Update ATM10 Data
+
+on:
+  schedule:
+    # Runs every Sunday at midnight UTC — picks up new ATM10 releases weekly
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+    # Also manually triggerable from the GitHub Actions tab
+
+jobs:
+  build-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120  # 2-hour safety ceiling (well above the ~40-min pipeline)
+    permissions:
+      contents: write     # Needed to push the updated public/data/ back to the repo
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Cache the extracted JAR data (lang/recipes/textures) between runs.
+      # The server pack itself (~2 GB) exceeds GitHub's 10 GB cache limit over time,
+      # so we cache the already-processed output instead.
+      # Cache key includes a hash of the pipeline scripts so it busts on script changes.
+      - name: Cache extracted JAR data
+        id: cache-jar-data
+        uses: actions/cache@v4
+        with:
+          path: |
+            cache/lang/
+            cache/recipes/
+            cache/textures/
+          key: atm10-jar-data-${{ hashFiles('scripts/extract-jar-data.py', 'scripts/fetch-modpack.js') }}
+          restore-keys: |
+            atm10-jar-data-
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Step 1+2: Download server pack and extract JARs — skip if cache hit
+      - name: Fetch server pack and extract JAR data
+        if: steps.cache-jar-data.outputs.cache-hit != 'true'
+        env:
+          CURSEFORGE_API_KEY: ${{ secrets.CURSEFORGE_API_KEY }}
+        run: SKIP_KUBEJS=1 SKIP_SPRITES=1 npm run build:data
+
+      # Step 3: Always re-fetch KubeJS recipes (they update frequently in the GitHub repo)
+      - name: Fetch KubeJS recipes
+        run: SKIP_DOWNLOAD=1 SKIP_EXTRACT=1 SKIP_SPRITES=1 npm run build:data
+
+      # Step 4: Build sprite sheet (skip if textures haven't changed)
+      - name: Build sprite sheet
+        if: steps.cache-jar-data.outputs.cache-hit != 'true'
+        run: SKIP_DOWNLOAD=1 SKIP_EXTRACT=1 SKIP_KUBEJS=1 npm run build:data
+
+      # Step 5: Normalize all data into public/data/
+      - name: Normalize data
+        run: SKIP_DOWNLOAD=1 SKIP_EXTRACT=1 SKIP_KUBEJS=1 SKIP_SPRITES=1 npm run build:data
+
+      # Commit updated data back to the repo if anything changed.
+      # Vercel's GitHub integration will then auto-deploy.
+      - name: Commit and push updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/
+          git diff --staged --quiet && echo "No data changes." || (
+            git commit -m "chore: update ATM10 item/recipe data [skip ci]" &&
+            git push
+          )
