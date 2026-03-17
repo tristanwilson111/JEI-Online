@@ -281,7 +281,7 @@ function buildItems(displayNames, spriteManifest) {
     if (b.modId === 'minecraft' && a.modId !== 'minecraft') return 1
     const modCmp = a.modId.localeCompare(b.modId)
     if (modCmp !== 0) return modCmp
-    return a.displayName.localeCompare(b.displayName)
+    return String(a.displayName ?? '').localeCompare(String(b.displayName ?? ''))
   })
 
   return items

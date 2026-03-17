@@ -1,71 +1,278 @@
 [
   {
-    "id": "minecraft:diamond_sword",
+    "id": "advancedperipherals:guide_book",
     "type": "crafting_shaped",
     "inputs": [
-      [],
-      [{ "itemId": "minecraft:diamond" }],
-      [],
-      [],
-      [{ "itemId": "minecraft:diamond" }],
-      [],
-      [],
-      [{ "itemId": "minecraft:stick" }],
-      []
-    ],
-    "output": { "itemId": "minecraft:diamond_sword" },
-    "outputCount": 1
-  },
-  {
-    "id": "minecraft:stick",
-    "type": "crafting_shaped",
-    "inputs": [
-      [],
-      [{ "itemId": "minecraft:oak_planks", "tag": "minecraft:planks" }],
+      [
+        {
+          "itemId": "minecraft:book"
+        }
+      ],
+      [
+        {
+          "tag": "computercraft:wired_modem"
+        }
+      ],
       [],
       [],
-      [{ "itemId": "minecraft:oak_planks", "tag": "minecraft:planks" }],
+      [],
       [],
       [],
       [],
       []
     ],
-    "output": { "itemId": "minecraft:stick" },
-    "outputCount": 4
-  },
-  {
-    "id": "minecraft:crafting_table",
-    "type": "crafting_shaped",
-    "inputs": [
-      [],
-      [],
-      [],
-      [],
-      [{ "tag": "minecraft:planks" }],
-      [{ "tag": "minecraft:planks" }],
-      [],
-      [{ "tag": "minecraft:planks" }],
-      [{ "tag": "minecraft:planks" }]
-    ],
-    "output": { "itemId": "minecraft:crafting_table" },
+    "output": {
+      "itemId": "patchouli:guide_book"
+    },
     "outputCount": 1
   },
   {
-    "id": "minecraft:oak_planks",
-    "type": "crafting_shapeless",
+    "id": "ars_ocultas:craft_stabilizer_tier4",
+    "type": "generic",
     "inputs": [
-      [{ "tag": "minecraft:oak_logs" }]
+      [
+        {
+          "itemId": "occultism:storage_stabilizer_tier3"
+        }
+      ],
+      [
+        {
+          "tag": "forge:storage_blocks/iesnium"
+        }
+      ],
+      [
+        {
+          "itemId": "minecraft:ender_eye"
+        }
+      ],
+      [
+        {
+          "itemId": "occultism:spirit_attuned_crystal"
+        }
+      ],
+      [
+        {
+          "itemId": "minecraft:end_rod"
+        }
+      ],
+      [
+        {
+          "itemId": "minecraft:shulker_shell"
+        }
+      ],
+      [
+        {
+          "itemId": "minecraft:dragon_breath"
+        }
+      ]
     ],
-    "output": { "itemId": "minecraft:oak_planks" },
-    "outputCount": 4
+    "output": {
+      "itemId": "occultism:storage_stabilizer_tier4"
+    },
+    "outputCount": 1
   },
   {
-    "id": "minecraft:iron_ingot_smelting",
-    "type": "smelting",
-    "inputs": [
-      [{ "itemId": "minecraft:iron_ore" }]
-    ],
-    "output": { "itemId": "minecraft:iron_ingot" },
+    "id": "mob_grinding_utils:beheading:blaze",
+    "type": "generic",
+    "inputs": [],
+    "output": {
+      "itemId": "[object Object]"
+    },
     "outputCount": 1
+  },
+  {
+    "id": "mob_grinding_utils:beheading:cave_spider",
+    "type": "generic",
+    "inputs": [],
+    "output": {
+      "itemId": "[object Object]"
+    },
+    "outputCount": 1
+  },
+  {
+    "id": "mob_grinding_utils:beheading:drowned",
+    "type": "generic",
+    "inputs": [],
+    "output": {
+      "itemId": "[object Object]"
+    },
+    "outputCount": 1
+  },
+  {
+    "id": "mob_grinding_utils:beheading:enderman",
+    "type": "generic",
+    "inputs": [],
+    "output": {
+      "itemId": "[object Object]"
+    },
+    "outputCount": 1
+  },
+  {
+    "id": "mob_grinding_utils:beheading:husk",
+    "type": "generic",
+    "inputs": [],
+    "output": {
+      "itemId": "[object Object]"
+    },
+    "outputCount": 1
+  },
+  {
+    "id": "mob_grinding_utils:beheading:piglin",
+    "type": "generic",
+    "inputs": [],
+    "output": {
+      "itemId": "[object Object]"
+    },
+    "outputCount": 1
+  },
+  {
+    "id": "mob_grinding_utils:beheading:piglin_brute",
+    "type": "generic",
+    "inputs": [],
+    "output": {
+      "itemId": "[object Object]"
+    },
+    "outputCount": 1
+  },
+  {
+    "id": "mob_grinding_utils:beheading:spider",
+    "type": "generic",
+    "inputs": [],
+    "output": {
+      "itemId": "[object Object]"
+    },
+    "outputCount": 1
+  },
+  {
+    "id": "mob_grinding_utils:beheading:zombified_piglin_brute",
+    "type": "generic",
+    "inputs": [],
+    "output": {
+      "itemId": "[object Object]"
+    },
+    "outputCount": 1
+  },
+  {
+    "id": "supplementaries:neoforge:ash_bricks_fd",
+    "type": "generic",
+    "inputs": [
+      [
+        {
+          "itemId": "supplementaries:ash_bricks"
+        }
+      ]
+    ],
+    "output": {
+      "itemId": {
+        "count": 4,
+        "id": "supplementaries:ash_brick"
+      }
+    },
+    "outputCount": 1
+  },
+  {
+    "id": "supplementaries:neoforge:lapis_bricks_fd",
+    "type": "generic",
+    "inputs": [
+      [
+        {
+          "itemId": "supplementaries:lapis_bricks"
+        }
+      ]
+    ],
+    "output": {
+      "itemId": {
+        "count": 4,
+        "id": "minecraft:lapis_lazuli"
+      }
+    },
+    "outputCount": 1
+  },
+  {
+    "id": "thermal:machine:pulverizer_cyanite_ingot_to_dust",
+    "type": "generic",
+    "inputs": [
+      [
+        {
+          "itemId": "bigreactors:cyanite_ingot"
+        }
+      ]
+    ],
+    "output": {
+      "itemId": "bigreactors:cyanite_dust"
+    },
+    "outputCount": 1
+  },
+  {
+    "id": "thermal:machine:pulverizer_graphite_ingot_to_dust",
+    "type": "generic",
+    "inputs": [
+      [
+        {
+          "itemId": "bigreactors:graphite_ingot"
+        }
+      ]
+    ],
+    "output": {
+      "itemId": "bigreactors:graphite_dust"
+    },
+    "outputCount": 1
+  },
+  {
+    "id": "thermal:machine:pulverizer_yellorite_ore_to_dust",
+    "type": "generic",
+    "inputs": [
+      [
+        {
+          "itemId": "bigreactors:yellorite_ore"
+        }
+      ]
+    ],
+    "output": {
+      "itemId": "bigreactors:yellorium_dust"
+    },
+    "outputCount": 1
+  },
+  {
+    "id": "thermal:machine:pulverizer_yellorium_ingot_to_dust",
+    "type": "generic",
+    "inputs": [
+      [
+        {
+          "itemId": "bigreactors:yellorium_ingot"
+        }
+      ]
+    ],
+    "output": {
+      "itemId": "bigreactors:yellorium_dust"
+    },
+    "outputCount": 1
+  },
+  {
+    "id": "titanium:test_serializer:dirt_to_diamod",
+    "type": "generic",
+    "inputs": [],
+    "output": {
+      "itemId": "minecraft:diamond"
+    },
+    "outputCount": 1
+  },
+  {
+    "id": "titanium:test_serializer:dirt_to_used",
+    "type": "generic",
+    "inputs": [],
+    "output": {
+      "itemId": "minecraft:diamond_pickaxe"
+    },
+    "outputCount": 1
+  },
+  {
+    "id": "titanium:test_serializer:saplings_to_sticks",
+    "type": "generic",
+    "inputs": [],
+    "output": {
+      "itemId": "minecraft:stick"
+    },
+    "outputCount": 3
   }
 ]

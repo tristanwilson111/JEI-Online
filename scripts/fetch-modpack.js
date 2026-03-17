@@ -16,12 +16,14 @@ const CACHE_DIR = path.resolve('cache')
 const OUTPUT_PATH = path.join(CACHE_DIR, 'atm10-server.zip')
 
 // ATM10 CurseForge project ID
-const ATM10_PROJECT_ID = 715438
+const ATM10_PROJECT_ID = 925200
 
-// Hardcoded fallback: ServerFiles-6.1.zip (March 2026) for Minecraft 1.21.1
-// Update this when a newer server pack is released.
+// Hardcoded fallback: ATM10 ServerFiles-6.1.zip (March 2026) for Minecraft 1.21.1
+// File ID 7722634 is the additional/server file of the 6.1 release (project 925200).
+// Direct edge.forgecdn.net URL resolved from: /api/v1/mods/925200/files/7722634/download
+// Update file ID + path when a newer server pack is released.
 const FALLBACK_URL =
-  'https://mediafilez.forgecdn.net/files/6374/474/ServerFiles-6.1.zip'
+  'https://edge.forgecdn.net/files/7722/634/ServerFiles-6.1.zip?api-key=267C6CA3'
 
 async function fetchJson(url, headers = {}) {
   return new Promise((resolve, reject) => {
