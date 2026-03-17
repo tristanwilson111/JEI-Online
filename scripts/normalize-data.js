@@ -42,6 +42,19 @@ const MOD_NAMES = {
   jei: 'JEI',
 }
 
+/**
+ * Flatten a Minecraft text component (possibly nested) to a plain string.
+ * Handles raw strings, `{"text":"..."}` objects, and arrays thereof.
+ */
+function flattenText(value) {
+  if (typeof value === 'string') return value
+  if (Array.isArray(value)) return value.map(flattenText).join('')
+  if (value && typeof value === 'object') {
+    return flattenText(value.text ?? value.translate ?? '')
+  }
+  return String(value ?? '')
+}
+
 function getModName(modId) {
   return MOD_NAMES[modId] ?? modId
     .split('_')
@@ -67,13 +80,13 @@ function buildDisplayNames() {
         // item.modid.itemname → modid:itemname
         const itemMatch = key.match(/^item\.([^.]+)\.(.+)$/)
         if (itemMatch) {
-          map.set(`${itemMatch[1]}:${itemMatch[2]}`, value)
+          map.set(`${itemMatch[1]}:${itemMatch[2]}`, flattenText(value))
           continue
         }
         // block.modid.blockname → modid:blockname
         const blockMatch = key.match(/^block\.([^.]+)\.(.+)$/)
         if (blockMatch) {
-          map.set(`${blockMatch[1]}:${blockMatch[2]}`, value)
+          map.set(`${blockMatch[1]}:${blockMatch[2]}`, flattenText(value))
         }
       }
     } catch {

@@ -10,7 +10,7 @@ export interface SearchIndex {
 export function buildSearchIndex(items: Item[]): SearchIndex {
   return {
     items,
-    lowerNames: items.map(item => stripFormatting(item.displayName).toLowerCase()),
+    lowerNames: items.map(item => stripFormatting(typeof item.displayName === 'string' ? item.displayName : String(item.displayName ?? '')).toLowerCase()),
     lowerMods: items.map(item => item.modName.toLowerCase()),
   }
 }
