@@ -1,0 +1,92 @@
+[
+  {
+    "id": "minecraft:diamond",
+    "modId": "minecraft",
+    "modName": "Minecraft",
+    "displayName": "§bDiamond",
+    "tooltip": ["§7A precious gemstone."],
+    "textureKey": "minecraft:diamond",
+    "tags": ["forge:gems/diamond", "forge:gems"]
+  },
+  {
+    "id": "minecraft:iron_ingot",
+    "modId": "minecraft",
+    "modName": "Minecraft",
+    "displayName": "Iron Ingot",
+    "tooltip": [],
+    "textureKey": "minecraft:iron_ingot",
+    "tags": ["forge:ingots/iron", "forge:ingots"]
+  },
+  {
+    "id": "minecraft:gold_ingot",
+    "modId": "minecraft",
+    "modName": "Minecraft",
+    "displayName": "§6Gold Ingot",
+    "tooltip": [],
+    "textureKey": "minecraft:gold_ingot",
+    "tags": ["forge:ingots/gold", "forge:ingots"]
+  },
+  {
+    "id": "minecraft:diamond_sword",
+    "modId": "minecraft",
+    "modName": "Minecraft",
+    "displayName": "§bDiamond Sword",
+    "tooltip": ["§71.6 Attack Speed", "§77 Attack Damage"],
+    "textureKey": "minecraft:diamond_sword",
+    "tags": []
+  },
+  {
+    "id": "minecraft:crafting_table",
+    "modId": "minecraft",
+    "modName": "Minecraft",
+    "displayName": "Crafting Table",
+    "tooltip": [],
+    "textureKey": "minecraft:crafting_table",
+    "tags": ["minecraft:crafting_tables"]
+  },
+  {
+    "id": "minecraft:furnace",
+    "modId": "minecraft",
+    "modName": "Minecraft",
+    "displayName": "Furnace",
+    "tooltip": [],
+    "textureKey": "minecraft:furnace",
+    "tags": ["forge:furnaces"]
+  },
+  {
+    "id": "minecraft:oak_log",
+    "modId": "minecraft",
+    "modName": "Minecraft",
+    "displayName": "Oak Log",
+    "tooltip": [],
+    "textureKey": "minecraft:oak_log",
+    "tags": ["minecraft:logs", "minecraft:logs_that_burn", "minecraft:oak_logs"]
+  },
+  {
+    "id": "minecraft:oak_planks",
+    "modId": "minecraft",
+    "modName": "Minecraft",
+    "displayName": "Oak Planks",
+    "tooltip": [],
+    "textureKey": "minecraft:oak_planks",
+    "tags": ["minecraft:planks", "minecraft:oak_planks"]
+  },
+  {
+    "id": "minecraft:stick",
+    "modId": "minecraft",
+    "modName": "Minecraft",
+    "displayName": "Stick",
+    "tooltip": [],
+    "textureKey": "minecraft:stick",
+    "tags": ["forge:rods/wooden", "forge:rods"]
+  },
+  {
+    "id": "minecraft:coal",
+    "modId": "minecraft",
+    "modName": "Minecraft",
+    "displayName": "Coal",
+    "tooltip": [],
+    "textureKey": "minecraft:coal",
+    "tags": ["forge:gems/coal", "minecraft:coals"]
+  }
+]

@@ -1,0 +1,96 @@
+/* Minecraft pixel font */
+@font-face {
+  font-family: 'Minecraft';
+  src: url('/fonts/Minecraft.woff2') format('woff2'),
+       url('/fonts/Minecraft.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Minecraft color variables */
+:root {
+  --mc-font: 'Minecraft', 'Courier New', monospace;
+
+  /* UI colors */
+  --mc-bg: #1a1a1a;
+  --mc-panel-bg: #2d2d2d;
+  --mc-slot-bg: #373737;
+  --mc-input-bg: #1a1a1a;
+  --mc-button-bg: #4a4a4a;
+  --mc-button-hover: #5a5a5a;
+  --mc-button-active: #3a5a3a;
+
+  /* Borders */
+  --mc-border-light: rgba(255, 255, 255, 0.2);
+  --mc-border-dark: rgba(0, 0, 0, 0.6);
+
+  /* Text colors (MC §-codes) */
+  --mc-black:       #000000;
+  --mc-dark-blue:   #0000AA;
+  --mc-dark-green:  #00AA00;
+  --mc-dark-aqua:   #00AAAA;
+  --mc-dark-red:    #AA0000;
+  --mc-dark-purple: #AA00AA;
+  --mc-gold:        #FFAA00;
+  --mc-gray:        #AAAAAA;
+  --mc-dark-gray:   #555555;
+  --mc-blue:        #5555FF;
+  --mc-green:       #55FF55;
+  --mc-aqua:        #55FFFF;
+  --mc-red:         #FF5555;
+  --mc-purple:      #FF55FF;
+  --mc-yellow:      #FFFF55;
+  --mc-white:       #FFFFFF;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--mc-bg);
+  color: var(--mc-white);
+  font-family: var(--mc-font);
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+}
+
+/* MC-style buttons */
+button {
+  font-family: var(--mc-font);
+  cursor: pointer;
+}
+
+/* Scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #444 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 0;
+}

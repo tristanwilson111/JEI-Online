@@ -1,0 +1,46 @@
+.mc-tooltip {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  background: rgba(16, 0, 16, 0.94);
+  border: 1px solid #5000a0;
+  box-shadow:
+    1px 0 0 0 #280050,
+    -1px 0 0 0 #280050,
+    0 1px 0 0 #280050,
+    0 -1px 0 0 #280050,
+    inset 1px 1px 0 #5000a0,
+    inset -1px -1px 0 #280050;
+  padding: 6px 8px;
+  min-width: 60px;
+  max-width: 280px;
+  font-family: var(--mc-font);
+}
+
+.mc-tooltip__name {
+  font-size: 12px;
+  color: var(--mc-white);
+  margin-bottom: 2px;
+  white-space: nowrap;
+}
+
+.mc-tooltip__mod {
+  font-size: 10px;
+  color: var(--mc-purple, #a040ff);
+  font-style: italic;
+  margin-bottom: 4px;
+}
+
+.mc-tooltip__line {
+  font-size: 10px;
+  color: var(--mc-gray);
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+.mc-tooltip__id {
+  font-size: 9px;
+  color: var(--mc-dark-gray);
+  margin-top: 4px;
+  opacity: 0.7;
+}

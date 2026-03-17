@@ -1,0 +1,19 @@
+.item-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.item-icon--fallback {
+  background-color: var(--mc-slot-bg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-icon__unknown {
+  font-family: var(--mc-font);
+  font-size: 14px;
+  color: var(--mc-gray);
+}

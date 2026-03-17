@@ -1,0 +1,149 @@
+/* Desktop Layout */
+.desktop-layout {
+  display: flex;
+  height: 100vh;
+  background-color: var(--mc-bg);
+  overflow: hidden;
+}
+
+.desktop-layout__recipe-panel {
+  width: 320px;
+  min-width: 260px;
+  flex-shrink: 0;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid var(--mc-border-dark);
+}
+
+.desktop-layout__item-panel {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.desktop-layout__search-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 6px 4px;
+  border-bottom: 1px solid var(--mc-border-dark);
+}
+
+.desktop-layout__count {
+  font-family: var(--mc-font);
+  font-size: 10px;
+  color: var(--mc-dark-gray);
+  white-space: nowrap;
+}
+
+/* Mobile Layout */
+.mobile-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--mc-bg);
+  overflow: hidden;
+}
+
+.mobile-layout__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: var(--mc-panel-bg);
+  border-bottom: 2px solid var(--mc-border-dark);
+  flex-shrink: 0;
+}
+
+.mobile-layout__title {
+  font-family: var(--mc-font);
+  font-size: 13px;
+  color: var(--mc-white);
+  letter-spacing: 0.04em;
+}
+
+.mobile-layout__search-btn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 2px 4px;
+  line-height: 1;
+}
+
+.mobile-layout__search-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  background: var(--mc-panel-bg);
+  border-bottom: 1px solid var(--mc-border-dark);
+  flex-shrink: 0;
+}
+
+.mobile-layout__search-bar .search-bar {
+  flex: 1;
+}
+
+.mobile-layout__search-close {
+  background: transparent;
+  border: none;
+  color: var(--mc-gray);
+  font-family: var(--mc-font);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.mobile-layout__count {
+  font-family: var(--mc-font);
+  font-size: 10px;
+  color: var(--mc-dark-gray);
+  white-space: nowrap;
+}
+
+.mobile-layout__content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-layout__tab-bar {
+  display: flex;
+  border-top: 2px solid var(--mc-border-dark);
+  background: var(--mc-panel-bg);
+  flex-shrink: 0;
+}
+
+.mobile-layout__tab {
+  flex: 1;
+  background: var(--mc-button-bg);
+  border: none;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
+  color: var(--mc-gray);
+  font-family: var(--mc-font);
+  font-size: 12px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.mobile-layout__tab.active {
+  background: var(--mc-button-active);
+  color: var(--mc-white);
+  box-shadow: inset 0 -2px 0 var(--mc-aqua);
+}
+
+.mobile-layout__tab:not(.active):hover {
+  color: var(--mc-white);
+}
+
+/* Shared MC panel */
+.mc-panel {
+  background-color: var(--mc-panel-bg);
+}

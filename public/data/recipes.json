@@ -1,0 +1,71 @@
+[
+  {
+    "id": "minecraft:diamond_sword",
+    "type": "crafting_shaped",
+    "inputs": [
+      [],
+      [{ "itemId": "minecraft:diamond" }],
+      [],
+      [],
+      [{ "itemId": "minecraft:diamond" }],
+      [],
+      [],
+      [{ "itemId": "minecraft:stick" }],
+      []
+    ],
+    "output": { "itemId": "minecraft:diamond_sword" },
+    "outputCount": 1
+  },
+  {
+    "id": "minecraft:stick",
+    "type": "crafting_shaped",
+    "inputs": [
+      [],
+      [{ "itemId": "minecraft:oak_planks", "tag": "minecraft:planks" }],
+      [],
+      [],
+      [{ "itemId": "minecraft:oak_planks", "tag": "minecraft:planks" }],
+      [],
+      [],
+      [],
+      []
+    ],
+    "output": { "itemId": "minecraft:stick" },
+    "outputCount": 4
+  },
+  {
+    "id": "minecraft:crafting_table",
+    "type": "crafting_shaped",
+    "inputs": [
+      [],
+      [],
+      [],
+      [],
+      [{ "tag": "minecraft:planks" }],
+      [{ "tag": "minecraft:planks" }],
+      [],
+      [{ "tag": "minecraft:planks" }],
+      [{ "tag": "minecraft:planks" }]
+    ],
+    "output": { "itemId": "minecraft:crafting_table" },
+    "outputCount": 1
+  },
+  {
+    "id": "minecraft:oak_planks",
+    "type": "crafting_shapeless",
+    "inputs": [
+      [{ "tag": "minecraft:oak_logs" }]
+    ],
+    "output": { "itemId": "minecraft:oak_planks" },
+    "outputCount": 4
+  },
+  {
+    "id": "minecraft:iron_ingot_smelting",
+    "type": "smelting",
+    "inputs": [
+      [{ "itemId": "minecraft:iron_ore" }]
+    ],
+    "output": { "itemId": "minecraft:iron_ingot" },
+    "outputCount": 1
+  }
+]
