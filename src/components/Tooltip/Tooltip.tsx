@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useJEIStore } from '../../store/jeiStore'
+import { useShallow } from 'zustand/react/shallow'
 import { parseFormatted } from '../../utils/formatting'
 import './Tooltip.css'
 
@@ -7,10 +8,10 @@ const OFFSET_X = 12
 const OFFSET_Y = 8
 
 export function Tooltip() {
-  const { hoveredItem, tooltipPos } = useJEIStore(s => ({
+  const { hoveredItem, tooltipPos } = useJEIStore(useShallow(s => ({
     hoveredItem: s.hoveredItem,
     tooltipPos: s.tooltipPos,
-  }))
+  })))
 
   const ref = useRef<HTMLDivElement>(null)
   const [pos, setPos] = useState({ left: 0, top: 0 })

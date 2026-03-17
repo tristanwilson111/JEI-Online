@@ -1,6 +1,7 @@
 import type { Recipe } from '../../types'
 import { ItemIcon } from '../ItemIcon/ItemIcon'
 import { useJEIStore } from '../../store/jeiStore'
+import { useShallow } from 'zustand/react/shallow'
 import { RECIPE_TYPE_LABELS } from '../../utils/recipes'
 import './RecipeView.css'
 
@@ -9,11 +10,11 @@ interface FurnaceViewProps {
 }
 
 export function FurnaceView({ recipe }: FurnaceViewProps) {
-  const { spriteManifest, items, selectItem } = useJEIStore(s => ({
+  const { spriteManifest, items, selectItem } = useJEIStore(useShallow(s => ({
     spriteManifest: s.spriteManifest,
     items: s.items,
     selectItem: s.selectItem,
-  }))
+  })))
 
   const getItem = (id?: string, tag?: string) => {
     if (id) return items.find(it => it.id === id)

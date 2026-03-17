@@ -3,7 +3,9 @@ import { useJEIStore } from '../store/jeiStore'
 import type { Item, Recipe, SpriteManifest } from '../types'
 
 export function useItemData() {
-  const { loadData, setLoading, setError } = useJEIStore()
+  const loadData = useJEIStore(s => s.loadData)
+  const setLoading = useJEIStore(s => s.setLoading)
+  const setError = useJEIStore(s => s.setError)
 
   useEffect(() => {
     let cancelled = false

@@ -8,10 +8,8 @@ interface RecipePagerProps {
 }
 
 export function RecipePager({ total, current, label }: RecipePagerProps) {
-  const { nextPage, prevPage } = useJEIStore(s => ({
-    nextPage: s.nextPage,
-    prevPage: s.prevPage,
-  }))
+  const nextPage = useJEIStore(s => s.nextPage)
+  const prevPage = useJEIStore(s => s.prevPage)
 
   if (total <= 1) return null
 

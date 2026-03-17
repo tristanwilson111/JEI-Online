@@ -2,11 +2,9 @@ import { useEffect, useRef } from 'react'
 import { useJEIStore } from '../store/jeiStore'
 
 export function useKeyboard(searchInputRef: React.RefObject<HTMLInputElement | null>) {
-  const { hoveredItem, selectItem, goBack } = useJEIStore(s => ({
-    hoveredItem: s.hoveredItem,
-    selectItem: s.selectItem,
-    goBack: s.goBack,
-  }))
+  const hoveredItem = useJEIStore(s => s.hoveredItem)
+  const selectItem = useJEIStore(s => s.selectItem)
+  const goBack = useJEIStore(s => s.goBack)
 
   const hoveredRef = useRef(hoveredItem)
   hoveredRef.current = hoveredItem

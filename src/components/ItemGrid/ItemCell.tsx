@@ -2,6 +2,7 @@ import { useCallback, useRef } from 'react'
 import type { Item } from '../../types'
 import { ItemIcon } from '../ItemIcon/ItemIcon'
 import { useJEIStore } from '../../store/jeiStore'
+import { useShallow } from 'zustand/react/shallow'
 import './ItemGrid.css'
 
 interface ItemCellProps {
@@ -12,11 +13,11 @@ interface ItemCellProps {
 const LONG_PRESS_MS = 500
 
 export function ItemCell({ item, size }: ItemCellProps) {
-  const { selectItem, setHovered, spriteManifest } = useJEIStore(s => ({
+  const { selectItem, setHovered, spriteManifest } = useJEIStore(useShallow(s => ({
     selectItem: s.selectItem,
     setHovered: s.setHovered,
     spriteManifest: s.spriteManifest,
-  }))
+  })))
 
   const longPressRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 

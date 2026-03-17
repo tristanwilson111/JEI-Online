@@ -24,10 +24,8 @@ export default function App() {
   useItemData()
   const isMobile = useIsMobile()
 
-  const { loading, error } = useJEIStore(s => ({
-    loading: s.loading,
-    error: s.error,
-  }))
+  const loading = useJEIStore(s => s.loading)
+  const error = useJEIStore(s => s.error)
 
   if (loading) {
     return (

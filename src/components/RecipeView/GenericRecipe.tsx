@@ -1,6 +1,7 @@
 import type { Recipe } from '../../types'
 import { ItemIcon } from '../ItemIcon/ItemIcon'
 import { useJEIStore } from '../../store/jeiStore'
+import { useShallow } from 'zustand/react/shallow'
 import { RECIPE_TYPE_LABELS } from '../../utils/recipes'
 import './RecipeView.css'
 
@@ -9,11 +10,11 @@ interface GenericRecipeProps {
 }
 
 export function GenericRecipe({ recipe }: GenericRecipeProps) {
-  const { spriteManifest, items, selectItem } = useJEIStore(s => ({
+  const { spriteManifest, items, selectItem } = useJEIStore(useShallow(s => ({
     spriteManifest: s.spriteManifest,
     items: s.items,
     selectItem: s.selectItem,
-  }))
+  })))
 
   const getItem = (id?: string, tag?: string) =>
     id ? items.find(it => it.id === id) : tag ? items.find(it => it.tags.includes(tag)) : undefined

@@ -3,17 +3,18 @@ import { SearchBar } from '../SearchBar/SearchBar'
 import { ItemGrid } from '../ItemGrid/ItemGrid'
 import { RecipeView } from '../RecipeView/RecipeView'
 import { useJEIStore } from '../../store/jeiStore'
+import { useShallow } from 'zustand/react/shallow'
 import './Layout.css'
 
 export function MobileLayout() {
   const [searchOpen, setSearchOpen] = useState(false)
   const searchRef = useRef<HTMLInputElement>(null)
-  const { mobileTab, setMobileTab, filteredCount, totalCount } = useJEIStore(s => ({
+  const { mobileTab, setMobileTab, filteredCount, totalCount } = useJEIStore(useShallow(s => ({
     mobileTab: s.mobileTab,
     setMobileTab: s.setMobileTab,
     filteredCount: s.filteredItems.length,
     totalCount: s.items.length,
-  }))
+  })))
 
   const openSearch = () => {
     setSearchOpen(true)

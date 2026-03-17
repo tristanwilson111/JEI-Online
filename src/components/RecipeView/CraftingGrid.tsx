@@ -1,6 +1,7 @@
 import type { Recipe } from '../../types'
 import { ItemIcon } from '../ItemIcon/ItemIcon'
 import { useJEIStore } from '../../store/jeiStore'
+import { useShallow } from 'zustand/react/shallow'
 import './RecipeView.css'
 
 interface CraftingGridProps {
@@ -8,11 +9,11 @@ interface CraftingGridProps {
 }
 
 export function CraftingGrid({ recipe }: CraftingGridProps) {
-  const { spriteManifest, items, selectItem } = useJEIStore(s => ({
+  const { spriteManifest, items, selectItem } = useJEIStore(useShallow(s => ({
     spriteManifest: s.spriteManifest,
     items: s.items,
     selectItem: s.selectItem,
-  }))
+  })))
 
   const isShapeless = recipe.type === 'crafting_shapeless'
   const cols = isShapeless ? Math.ceil(Math.sqrt(recipe.inputs.length)) : 3

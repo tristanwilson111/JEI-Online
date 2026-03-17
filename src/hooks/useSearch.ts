@@ -2,10 +2,8 @@ import { useCallback, useRef } from 'react'
 import { useJEIStore } from '../store/jeiStore'
 
 export function useSearch() {
-  const { searchQuery, setSearch } = useJEIStore(s => ({
-    searchQuery: s.searchQuery,
-    setSearch: s.setSearch,
-  }))
+  const searchQuery = useJEIStore(s => s.searchQuery)
+  const setSearch = useJEIStore(s => s.setSearch)
 
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 

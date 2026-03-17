@@ -1,4 +1,5 @@
 import { useJEIStore } from '../../store/jeiStore'
+import { useShallow } from 'zustand/react/shallow'
 import { parseFormatted, stripFormatting } from '../../utils/formatting'
 import { CraftingGrid } from './CraftingGrid'
 import { FurnaceView } from './FurnaceView'
@@ -9,14 +10,14 @@ import './RecipeView.css'
 
 export function RecipeView() {
   const { selectedItem, viewMode, recipePageIndex, recipesByOutput, recipesByInput, goBack } =
-    useJEIStore(s => ({
+    useJEIStore(useShallow(s => ({
       selectedItem: s.selectedItem,
       viewMode: s.viewMode,
       recipePageIndex: s.recipePageIndex,
       recipesByOutput: s.recipesByOutput,
       recipesByInput: s.recipesByInput,
       goBack: s.goBack,
-    }))
+    })))
 
   const selectItem = useJEIStore(s => s.selectItem)
 
