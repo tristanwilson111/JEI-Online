@@ -32,7 +32,7 @@ export function ItemIcon({ textureKey, spriteManifest, size = 32 }: ItemIconProp
         height: size,
         backgroundImage: `url(${sheetUrl})`,
         backgroundPosition: `-${sprite.x * scale}px -${sprite.y * scale}px`,
-        backgroundSize: `auto`,
+        backgroundSize: `${1024 * scale}px auto`,
         imageRendering: 'pixelated',
       }}
       title={textureKey}

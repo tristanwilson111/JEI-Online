@@ -257,6 +257,9 @@ function buildItems(displayNames, spriteManifest) {
   // From lang files
   for (const [itemId, displayName] of displayNames) {
     if (seen.has(itemId)) continue
+    // Skip lang keys that aren't valid item IDs (dots in path = tooltip/variant keys)
+    const path = itemId.split(':')[1] ?? ''
+    if (path.includes('.')) continue
     seen.add(itemId)
 
     const [modId] = itemId.split(':')

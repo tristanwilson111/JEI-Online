@@ -70,6 +70,11 @@ async function run() {
     await step('2/5 Extract JAR data', async () => {
       execSync('python3 scripts/extract-jar-data.py', { stdio: 'inherit' })
     })
+
+    // Extract Minecraft client JAR assets (vanilla textures + lang)
+    await step('2b/5 Extract Minecraft client assets', async () => {
+      execSync('python3 scripts/extract-minecraft-client.py', { stdio: 'inherit' })
+    })
   } else {
     console.log('\n[2/5 Extract JAR data] SKIPPED')
   }
